@@ -81,15 +81,15 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 
 ### Home
 
-<img title="" alt="Prototyp Home Screen" src="../M294_ToDo-List/Frontend/img/Home.png">
+<img title="" alt="Prototyp Home Screen" src="./img/Home.png">
 
 ### Archive
 
-<img title="" alt="Prototyp Archive" src="../M294_ToDo-List/Frontend/img/Archive.png">
+<img title="" alt="Prototyp Archive" src="./img/Archive.png">
 
 ### Task Creation
 
-<img title="" alt="Prototyp CreateTask" src="../M294_ToDo-List/Frontend/img/CreateToDoList.png">
+<img title="" alt="Prototyp CreateTask" src="./img/CreateToDoList.png">
 
 
 
