@@ -99,4 +99,4 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 - [Farbpalette für unsere ToDo-Liste](https://coolors.co/palettes/popular/0f172a)
 - [Website für unsere Icons](https://www.flaticon.com/icon-fonts-most-downloaded)
 - [Prototyp erstellt mithilfe von Figma](https://www.figma.com/design/PHtCBMsnAXXkurCZracm7Y/Untitled?node-id=0-1&node-type=canvas&t=deJsHoNP8Yqy9c5D-0)
-
+- [CSS Strukturierung BEM](https://css-tricks.com/bem-101/)
