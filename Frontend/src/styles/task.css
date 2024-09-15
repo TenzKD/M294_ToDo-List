@@ -1,6 +1,45 @@
 .task {
-  width: 80vw;
-  height: 85vh;
-  margin-left: 20vw;
-  margin-top: 15vh;
+  width: calc(100vw - 23.5rem);
+  height: calc(100vh - 10rem);
+  margin-left: 23.5rem;
+  margin-top: 10rem;
+}
+
+.task__controls {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  /*position: sticky;
+  top: 10rem;*/
+}
+
+.task__search {
+  display: flex;
+  align-items: center;
+}
+
+.task__search img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: 40px;
+}
+
+.task__container {
+  height: auto;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 4fr));
+  grid-auto-rows: 350px;
+  padding: 2rem;
+}
+
+input {
+  width: 15rem;
+  height: 3rem;
+  font-size: 20px;
+  padding-left: 3rem;
+  border-radius: 100rem;
+  background-color: #fff;
+  color: #000;
 }

@@ -1,0 +1,16 @@
+.addTask__btn {
+  background-color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 1rem 1.4rem;
+  border-radius: 10px;
+  margin-right: 3rem;
+}
+
+.addTask__icon {
+  width: 20px;
+  height: 20px;
+  padding-right: 1rem;
+}

@@ -19,7 +19,7 @@ export default function ToDoList() {
       <table id="listig">
         <tbody>
           {tasks.map((q) => (
-            <tr>
+            <tr key={q.id}>
               <td>{q.id}</td>
               <td>{q.title}</td>
               <td>{q.description}</td>
