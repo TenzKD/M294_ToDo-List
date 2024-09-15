@@ -34,7 +34,7 @@
   padding: 2rem;
 }
 
-input {
+.task__search input {
   width: 15rem;
   height: 3rem;
   font-size: 20px;

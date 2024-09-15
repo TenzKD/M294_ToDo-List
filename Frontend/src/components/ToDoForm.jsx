@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import '../styles/todo.css';
+import { useState } from "react";
+import "../styles/todo.css";
 
-
-function ToDoForm () {
+function ToDoForm() {
   const [entries, setEntries] = useState({});
   const store = (e) => {
     setEntries({
@@ -15,7 +14,7 @@ function ToDoForm () {
 
   const submit = (e) => {
     e.preventDefault();
-  
+
     const submitData = {
       content: {
         title: entries.title,
@@ -24,8 +23,8 @@ function ToDoForm () {
         completed: "false",
       },
     };
-  
-    console.log('Submitting Data:', submitData); 
+
+    console.log("Submitting Data:", submitData);
 
     fetch("http://localhost:8080/tasks/documents", {
       method: "POST",
@@ -34,47 +33,39 @@ function ToDoForm () {
       },
       body: JSON.stringify(submitData),
     })
-      .then((response) => response.json()) 
+      .then((response) => response.json())
       .then(() => {
-        setEntries({}); 
+        setEntries({});
       });
   };
-  
+
   return (
-    <div className='InputFormular'>
-    <form onSubmit={submit}>
-      <div>
-        <label>Title:</label>
-        <input 
-          type="text" 
-          placeholder="Task title" 
-          name = "title"
-          onChange={store} 
-          required 
-        />
-      </div>
-      <div>
-        <label>Description:</label>
-        <textarea 
-          placeholder="Task description" 
-          name = "description"
-          onChange={store} 
-          required 
-        />
-      </div>
-      <div>
-        <label>Due Date:</label>
-        <input 
-          type="date" 
-          name = "dueDate"
-          onChange={store} 
-          required 
-        />
-      </div>
-      <button type="submit">Add Task</button>
-    </form>
+    <div className="forms">
+      <form onSubmit={submit}>
+        <div>
+          <input
+            type="text"
+            placeholder="Task title"
+            name="title"
+            onChange={store}
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            placeholder="Task description"
+            name="description"
+            onChange={store}
+            required
+          />
+        </div>
+        <div>
+          <input type="date" name="dueDate" onChange={store} required />
+        </div>
+        <button type="submit">Add Task</button>
+      </form>
     </div>
   );
-};
+}
 
 export default ToDoForm;
