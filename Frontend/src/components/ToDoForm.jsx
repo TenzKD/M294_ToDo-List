@@ -55,6 +55,7 @@ function ToDoForm({ closeForm, setCloseForm, addTask }) {
             type="text"
             placeholder="Task title"
             name="title"
+            value={entries.title || ''}
             onChange={store}
             required
           />
@@ -63,14 +64,15 @@ function ToDoForm({ closeForm, setCloseForm, addTask }) {
           <textarea
             placeholder="Task description"
             name="description"
+            value={entries.description || ''}
             onChange={store}
             required
           />
         </div>
         <div>
-          <input type="date" name="dueDate" onChange={store} required />
+          <input type="date" name="dueDate" value={entries.dueDate || ''} onChange={store} required />
         </div>
-        <button type="submit">Create Task</button>
+        <button type="submit" onClick={() => setCloseForm(true)}>Create Task</button>
       </form>
     </div>
   );
