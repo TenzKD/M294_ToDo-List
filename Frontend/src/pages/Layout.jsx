@@ -10,22 +10,26 @@ export default function Layout() {
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-    if (storedTasks) {
+    if (storedTasks && storedTasks.length > 0) {
       setTasks(storedTasks);
     } else {
       // Fallback to fetching from API if nothing in localStorage
       fetch("http://localhost:8080/tasks/documents")
         .then((response) => response.json())
         .then((data) => {
-          setTasks(data);
-          localStorage.setItem("tasks", JSON.stringify(data));
+          if (data.length === 0) {
+            // If the API returns an empty array, clear localStorage
+            localStorage.removeItem("tasks");
+          } else {
+            setTasks(data);
+            localStorage.setItem("tasks", JSON.stringify(data)); // Store in localStorage
+          }
         })
         .catch((error) => console.error("Error fetching tasks:", error));
     }
   }, []);
 
   const addTask = (newTask) => {
-    // Make POST request to backend to persist the task
     fetch("http://localhost:8080/tasks/documents", {
       method: "POST",
       headers: {
@@ -42,11 +46,33 @@ export default function Layout() {
       });
   };
 
+  const deleteTask = (id) => {
+    fetch("http://localhost:8080/tasks/documents/" + id, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          const updatedTasks = tasks.filter((task) => task.id !== id);
+          setTasks(updatedTasks);
+          if (updatedTasks.length === 0) {
+            // Clear localStorage if no tasks remain
+            localStorage.removeItem("tasks");
+          } else {
+            localStorage.setItem("tasks", JSON.stringify(updatedTasks)); // Update localStorage
+          }
+          console.log("Task deleted successfully");
+        } else {
+          console.error("Error deleting task:", response.statusText);
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  };
+
   return (
     <>
       <Header />
       <Sidebar />
-      <Task setCloseForm={setCloseForm} tasks={tasks} />
+      <Task setCloseForm={setCloseForm} tasks={tasks} deleteTask={deleteTask} />
       <ToDoForm
         closeForm={closeForm}
         setCloseForm={setCloseForm}

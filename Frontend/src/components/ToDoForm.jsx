@@ -35,9 +35,11 @@ function ToDoForm({ closeForm, setCloseForm, addTask }) {
       body: JSON.stringify(submitData),
     })
       .then((response) => response.json())
-      .then(() => {
-        addTask(submitData);
-        setEntries({});
+      .then((savedTask) => {
+        // Use the saved task from the server, including its ID
+        addTask(savedTask);
+        setEntries({}); // Clear the form
+        setCloseForm(true); // Close the form after submission is successful
       });
   };
 
@@ -55,7 +57,7 @@ function ToDoForm({ closeForm, setCloseForm, addTask }) {
             type="text"
             placeholder="Task title"
             name="title"
-            value={entries.title || ''}
+            value={entries.title || ""}
             onChange={store}
             required
           />
@@ -64,15 +66,23 @@ function ToDoForm({ closeForm, setCloseForm, addTask }) {
           <textarea
             placeholder="Task description"
             name="description"
-            value={entries.description || ''}
+            value={entries.description || ""}
             onChange={store}
             required
           />
         </div>
         <div>
-          <input type="date" name="dueDate" value={entries.dueDate || ''} onChange={store} required />
+          <input
+            type="date"
+            name="dueDate"
+            value={entries.dueDate || ""}
+            onChange={store}
+            required
+          />
         </div>
-        <button type="submit" onClick={() => setCloseForm(true)}>Create Task</button>
+        <button type="submit" onClick={() => setCloseForm(true)}>
+          Create Task
+        </button>
       </form>
     </div>
   );

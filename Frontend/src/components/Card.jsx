@@ -2,7 +2,7 @@ import closeBtn from "../icons/cross.png";
 import editBtn from "../icons/edit.png";
 import "../styles/card.css";
 
-export default function Card({ title, description, dueDate }) {
+export default function Card({ id, title, description, dueDate, deleteTask }) {
   return (
     <>
       <div className="card">
@@ -17,6 +17,7 @@ export default function Card({ title, description, dueDate }) {
             className="card__content--close"
             src={closeBtn}
             alt="close-button"
+            onClick={() => deleteTask(id)}
           />
         </div>
         <div className="card--flex">

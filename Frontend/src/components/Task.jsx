@@ -3,7 +3,7 @@ import "../styles/task.css";
 import searchIcon from "../icons/search.png";
 import Card from "./Card";
 
-export default function Task({ tasks, setCloseForm }) {
+export default function Task({ tasks, setCloseForm, deleteTask }) {
   return (
     <>
       <div className="task">
@@ -18,9 +18,11 @@ export default function Task({ tasks, setCloseForm }) {
           {tasks.map((task) => (
             <Card
               key={task.id}
+              id={task.id}
               title={task.content.title}
               description={task.content.description}
               dueDate={task.content.dueDate}
+              deleteTask={deleteTask}
             />
           ))}
         </div>
