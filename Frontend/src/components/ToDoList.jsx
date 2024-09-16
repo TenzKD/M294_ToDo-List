@@ -14,33 +14,39 @@ export default function ToDoList() {
   // Wird immer ausgeführt wenn die ToDoList Komponente geladen wird.
   useEffect(fun, []);
 
+  
   const deleteTask = (id) => {
-    fetch("http://localhost:8080/tasks/documents/"+id, {
+    fetch("http://localhost:8080/tasks/documents/" + id, {
       method: "DELETE",
-    }).then((response) => {
-      if (response.ok) {
-        setTasks(tasks.filter((task) => task.id !== id)); // Entfernt die gelöschte Aufgabe
-        response => console.log(response);
-      } else {
-        console.error('Fehler beim Löschen:', response.statusText);
-      }
-    }).catch((error) => console.error('Fehler:', error));
+    })
+      .then((response) => {
+        if (response.ok) {
+          setTasks(tasks.filter((task) => task.id !== id)); // Entfernt die gelöschte Aufgabe
+          (response) => console.log(response);
+        } else {
+          console.error("Fehler beim Löschen:", response.statusText);
+        }
+      })
+      .catch((error) => console.error("Fehler:", error));
   };
+
 
   return (
     <>
-      <table id="listig">
-        <tbody>
-          {tasks.map((q) => (
-            <tr key={q.id}>
-              <td>{q.id}</td>
-              <td>{q.title}</td>
-              <td>{q.description}</td>
-              <td><button onClick={() => deleteTask(q.id)}>&#128465;</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div id="listig">
+        {tasks.map((q) => (
+          <>
+          <div>
+            <p>{q.content.title}</p>
+            <p>{q.content.description}</p>
+            <p>
+              <button onClick={() => deleteTask(q.id)}>Löschen</button>
+              <button onClick={() => closeTask(q.id)}>Erledigt</button>
+            </p>
+            </div>
+          </>
+        ))}
+      </div>
     </>
   );
 }
