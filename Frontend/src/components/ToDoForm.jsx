@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "../styles/todo.css";
 import closeBtn from "../icons/cross.png";
-import PropTypes from "prop-types";
 
-function ToDoForm({ closeForm, setCloseForm }) {
+function ToDoForm({ closeForm, setCloseForm, addTask }) {
   const [entries, setEntries] = useState({});
   const store = (e) => {
     setEntries({
@@ -22,7 +21,7 @@ function ToDoForm({ closeForm, setCloseForm }) {
         title: entries.title,
         description: entries.description,
         dueDate: entries.dueDate,
-        completed: "false",
+        completed: false,
       },
     };
 
@@ -37,6 +36,7 @@ function ToDoForm({ closeForm, setCloseForm }) {
     })
       .then((response) => response.json())
       .then(() => {
+        addTask(submitData);
         setEntries({});
       });
   };

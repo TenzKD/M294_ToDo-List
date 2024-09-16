@@ -3,7 +3,7 @@ import "../styles/task.css";
 import searchIcon from "../icons/search.png";
 import Card from "./Card";
 
-export default function Task({ setCloseForm }) {
+export default function Task({ tasks, setCloseForm }) {
   return (
     <>
       <div className="task">
@@ -14,7 +14,16 @@ export default function Task({ setCloseForm }) {
             <input type="search" name="search" id="search"></input>
           </div>
         </div>
-        <div className="task__container"></div>
+        <div className="task__container">
+          {tasks.map((task) => (
+            <Card
+              key={task.id}
+              title={task.content.title}
+              description={task.content.description}
+              dueDate={task.content.dueDate}
+            />
+          ))}
+        </div>
       </div>
     </>
   );
