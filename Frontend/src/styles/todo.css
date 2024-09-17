@@ -9,7 +9,7 @@
   z-index: 1000;
   border-radius: 10px;
   width: 450px;
-  height: 500px;
+  height: 600px;
   text-align: center;
 }
 
@@ -22,16 +22,18 @@
   cursor: pointer;
 }
 
-form {
-  width: inherit;
-  height: inherit;
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-form > * {
-  margin-bottom: 1rem;
+.todos button {
+  margin-top: 1rem;
 }
 
-form textarea {
+.todos__container {
   font-size: 1rem;
   width: 20rem;
   height: 15rem;
@@ -39,6 +41,26 @@ form textarea {
   color: black;
   padding-left: 1rem;
   padding-top: 1rem;
+  border: 2px solid #333;
+  margin-bottom: 1rem;
+}
+
+.todos__container ul {
+  padding-left: 1rem;
+}
+
+.todos__container li {
+  text-align: start;
+}
+
+form {
+  width: inherit;
+  height: inherit;
+  padding-top: -100rem;
+}
+
+form > * {
+  margin-bottom: 1rem;
 }
 
 form input {

@@ -34,6 +34,11 @@
   padding: 2rem;
 }
 
+.task__container p {
+  color: black;
+  font-size: 1.2rem;
+}
+
 .task__search input {
   width: 15rem;
   height: 3rem;
