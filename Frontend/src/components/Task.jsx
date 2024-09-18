@@ -4,7 +4,7 @@ import "../styles/task.css";
 import searchIcon from "../icons/search.png";
 import Card from "./Card";
 
-export default function Task({ tasks, setCloseForm, deleteTask }) {
+export default function Task({ tasks, setCloseForm, deleteTask, setTasks }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTasks = tasks.filter((task) => {
@@ -23,6 +23,30 @@ export default function Task({ tasks, setCloseForm, deleteTask }) {
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const updateTask = (updatedTask) => {
+    fetch("http://localhost:8080/tasks/documents", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedTask),
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then((updatedData) => {
+        setTasks((prevTasks) =>
+          prevTasks.map((task) =>
+            task.id === updatedTask.id ? updatedData : task
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
   };
 
   return (
@@ -51,6 +75,7 @@ export default function Task({ tasks, setCloseForm, deleteTask }) {
                 todos={task.content.todos}
                 dueDate={task.content.dueDate}
                 deleteTask={deleteTask}
+                updateTask={updateTask}
               />
             ))
           ) : (

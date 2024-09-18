@@ -16,13 +16,22 @@
   list-style-type: none;
 }
 
+.nav a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
 .nav li {
   display: flex;
   justify-content: left;
   align-items: center;
   font-size: 3rem;
   font-weight: bold;
-  padding: 1rem 2rem;
 }
 
 .nav li:hover {

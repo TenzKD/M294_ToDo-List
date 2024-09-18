@@ -8,12 +8,16 @@ export default function Navigation() {
     <nav className="nav">
       <ul>
         <li>
-          <img src={home} className="nav__icon" alt="home icon" />
-          Home
+          <Link to="/home">
+            <img src={home} className="nav__icon" alt="home icon" />
+            Home
+          </Link>
         </li>
         <li>
-          <img src={archive} className="nav__icon" alt="home icon" />
-          Archive
+          <Link to="/impressum">
+            <img src={archive} className="nav__icon" alt="home icon" />
+            Impressum
+          </Link>
         </li>
       </ul>
       <p>Made by Fabian, Kunga</p>
