@@ -13,7 +13,10 @@
     - [Home](#home)
     - [Archive](#archive)
     - [Task Creation](#task-creation)
-  - [Hilfestellungen](#hilfestellungen)
+- [REST-Schnittstellen](#rest-schnittstellen)
+- [Testplan](#testplan)
+- [Installationsanleitung](#installationsanleitung)
+- [Hilfestellungen](#hilfestellungen)
 
 ## Projektidee
 
@@ -27,12 +30,14 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 
 <ins>Akzeptanzkriterien</ins>
 - Der User sieht einen Dashboard mit allen seinen aktuellen offenen Listen.
-- Aufgaben sind unterteilt in Offene Aufgaben und erledigte Aufgaben.
 - Der User kann die Aufgaben mithilfe eines Suchtextfilters filtern um diese schneller zu finden.
+- Der User sollte einen möglichst responsiven (Für PC User) Dashboard haben für alle Monitorengrössen.
+- Aufgaben sind unterteilt in Offene Aufgaben und erledigte Aufgaben. (Optional)
 - Die Anzahl der offenen und erledigten Aufgaben wird angezeigt. (optional)
 - Aufgaben werden nach Datum sortiert angezeigt. (optional)
 - Das Dashboard hat eine Kalenderfunktion mit diesem der User die Aufgabenlisten der Tage prüfen kann. (optional)
 
+<!---Hier eventuell noch einige Akzeptanzkriterien hinzufügen welche nicht optional sind und wir auch erreicht haben. -->
 
 **Als User möchte ich neue Aufgaben erstellen, bearbeiten, löschen oder als erledigt markieren um meinen Tag zu planen.**
 
@@ -42,9 +47,9 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 - Der User kann eine bestehende Aufgabe bearbeiten (Titel, Beschreibung und Datum).
 - Die geänderte Liste soll in der Applikation ersichtlich sein.
 - Der User kann eine Aufgabe löschen und die Aufgabe verschwindet aus der Liste.
-- Der User kann eine Aufgabe als erledigt markieren und die Aufgabe wechselt in die Kategorie Erledigte Aufgaben.
+- Der User kann eine Aufgabe in der Liste als erledigt markieren und wieder entmarkieren.
 - Alle Inputfelder müssen Pflichtfelder sein. Wenn eines fehlt soll der User darüber informiert werden.
-- Der User kann eine erledigte Aufgabe wieder rückgängig machen im Falle eines Versehens. (optional)
+- Der User kann eine erledigte Aufgabe wieder rückgängig machen im Falle eines Versehens im Archiv. (optional)
 
 ## Anforderungskatalog
 
@@ -55,7 +60,7 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 - Der User kann eine neue Aufgabenliste erstellen mit einem Titel, Beschreibung und Datum.
 - Der User kann bestehende Aufgaben anpassen.
 - Der User kann Aufgaben endgültig löschen.
-- Der User kann Aufgaben als erledigt markieren.
+- Der User kann Aufgaben in der Liste als erledigt markieren.
 - Der User kann Aufgaben suchen, um schnell bestimmte Einträge zu finden.
 - Die Anwendung nutzt Rest API um Aufgaben zu erstellen.
 
@@ -91,13 +96,28 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 
 <img title="" alt="Prototyp CreateTask" src="./img/CreateToDoList.png">
 
+<!---Eventuell Ablaufpläne erstellen-->
+
+# REST-Schnittstellen
+
+# Testplan
 
 
-## Hilfestellungen
 
- - [Inhaltsverzeichnis erstellen innerhalb eines Markdown Files](https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents#27953547)
+# Installationsanleitung
+
+<!--Fragen ob man hier auch die Installationsanleitung für Babel und Jest hinzufügen muss-->
+
+
+
+# Hilfestellungen
+
+- [Inhaltsverzeichnis erstellen innerhalb eines Markdown Files](https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents#27953547)
 - [Farbpalette für unsere ToDo-Liste](https://coolors.co/palettes/popular/0f172a)
 - [Website für unsere Icons](https://www.flaticon.com/icon-fonts-most-downloaded)
 - [Prototyp erstellt mithilfe von Figma](https://www.figma.com/design/PHtCBMsnAXXkurCZracm7Y/Untitled?node-id=0-1&node-type=canvas&t=deJsHoNP8Yqy9c5D-0)
 - [CSS Strukturierung BEM](https://css-tricks.com/bem-101/)
 - [MongoDB Rest API von diesem Repository genutzt](https://github.com/WISS-GB/M294-MongoDB-API)
+- [Nutzung von fireEvent für Unit Tests](https://testing-library.com/docs/dom-testing-library/api-events/)
+
+<!--Falls weitere Hilfestellunge genutzt worden sind hier einfügen-->
