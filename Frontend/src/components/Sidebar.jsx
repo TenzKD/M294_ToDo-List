@@ -1,3 +1,4 @@
+import React from "react";
 import Title from "./Title";
 import Navigation from "../pages/Navigation";
 import "../styles/sidebar.css";

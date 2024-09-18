@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import "../styles/todo.css";
 import closeBtn from "../icons/cross.png";

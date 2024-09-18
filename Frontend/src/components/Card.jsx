@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import closeBtn from "../icons/cross.png";
 import editBtn from "../icons/edit.png";

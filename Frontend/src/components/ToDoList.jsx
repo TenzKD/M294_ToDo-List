@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 
 export default function ToDoList() {
@@ -14,7 +15,6 @@ export default function ToDoList() {
   // Wird immer ausgeführt wenn die ToDoList Komponente geladen wird.
   useEffect(fun, []);
 
-  
   const deleteTask = (id) => {
     fetch("http://localhost:8080/tasks/documents/" + id, {
       method: "DELETE",
@@ -30,19 +30,18 @@ export default function ToDoList() {
       .catch((error) => console.error("Fehler:", error));
   };
 
-
   return (
     <>
       <div id="listig">
         {tasks.map((q) => (
           <>
-          <div>
-            <p>{q.content.title}</p>
-            <p>{q.content.description}</p>
-            <p>
-              <button onClick={() => deleteTask(q.id)}>Löschen</button>
-              <button onClick={() => closeTask(q.id)}>Erledigt</button>
-            </p>
+            <div>
+              <p>{q.content.title}</p>
+              <p>{q.content.description}</p>
+              <p>
+                <button onClick={() => deleteTask(q.id)}>Löschen</button>
+                <button onClick={() => closeTask(q.id)}>Erledigt</button>
+              </p>
             </div>
           </>
         ))}

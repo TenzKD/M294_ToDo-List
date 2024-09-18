@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import AddTaskButton from "./AddTaskButton";
 import "../styles/task.css";

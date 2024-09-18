@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import home from "../icons/home.png";
 import archive from "../icons/folder-archive.png";
