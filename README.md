@@ -82,7 +82,7 @@ Folgende User Stories haben wir erstellt in Anbetracht unserer Idee inklusive Ak
 - Erfolgt mithilfe von Git/Github
 
 ## Komponentendiagramm
-![Komponentendiagramm](./img/komponentendiagram.png)
+<img title="" alt="Prototyp CreateTask" src="./img/komponentendiagram.png">
 
 
 ## Storyboard
