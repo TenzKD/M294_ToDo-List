@@ -5,18 +5,19 @@ import editBtn from "../icons/edit.png";
 import saveBtn from "../icons/disk.png";
 import "../styles/card.css";
 
+
 export default function Card({
   id,
-  title,
-  todos,
-  dueDate,
+  title = "Untitled", // Default title in case undefined is passed
+  todos = [], // Default to an empty array if undefined
+  dueDate = "No due date", // Default due date if not provided
   deleteTask,
   updateTask,
 }) {
   const [completedTodos, setCompletedTodos] = useState([]);
-  const [isEditing, setIsEditing] = useState(false); // Track edit mode
-  const [editedTitle, setEditedTitle] = useState(title); // Editable title
-  const [editedTodos, setEditedTodos] = useState(todos); // Editable todos
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTitle, setEditedTitle] = useState(title);
+  const [editedTodos, setEditedTodos] = useState(todos);
   const [editedDueDate, setEditedDueDate] = useState(dueDate);
 
   const toggleCompletion = (index) => {
@@ -26,7 +27,6 @@ export default function Card({
   };
 
   const handleSave = () => {
-    // Prepare the updated task data
     const updatedTask = {
       id,
       content: {
@@ -37,10 +37,7 @@ export default function Card({
       },
     };
 
-    // Send the updated task to the parent component for API update
     updateTask(updatedTask);
-
-    // Exit edit mode
     setIsEditing(false);
   };
 
