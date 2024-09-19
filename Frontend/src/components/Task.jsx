@@ -60,6 +60,7 @@ export default function Task({ tasks = [], setCloseForm, deleteTask, setTasks })
             type="search"
             name="search"
             id="search"
+            placeholder="search"
             value={searchTerm}
             onChange={handleSearch}
           ></input>
