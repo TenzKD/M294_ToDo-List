@@ -6,3 +6,7 @@
 .impressum p {
   width: auto;
 }
+
+.impressum h1 {
+  color: black;
+}

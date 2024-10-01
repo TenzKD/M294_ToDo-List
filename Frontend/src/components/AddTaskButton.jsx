@@ -1,8 +1,6 @@
 import React from "react";
-import { useState } from "react";
 import plus from "../icons/plus.png";
-import "../styles/AddTaskButton.css";
-import ToDoForm from "./ToDoForm";
+import "../styles/addTaskButton.css";
 
 export default function AddTaskButton({ setCloseForm }) {
   return (
